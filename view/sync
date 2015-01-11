@@ -1,0 +1,13 @@
+name=vktopgroups
+
+gsutil cp -z js -a public-read bower_components/platform/platform.js gs://$name/polymer/platform.js
+gsutil cp -z js -a public-read bower_components/polymer/polymer.js gs://$name/polymer/polymer.js
+
+gsutil cp -z js -a public-read build.js gs://$name/polymer/build.js
+
+gsutil cp -a public-read build.html gs://$name/polymer/build.html
+
+gsutil cors set cors.json gs://$name
+
+
+#gsutil -m acl -R set public-read gs://$name/polymer
